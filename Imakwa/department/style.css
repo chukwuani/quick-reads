@@ -1,0 +1,132 @@
+.department-icon img{
+    width: 30px;
+}
+
+.department{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+    position: relative;
+    width: 100%;
+}
+
+.department p{
+    opacity: .65;
+}
+
+.active-depart::after{
+    content: "";
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--Soft-red);
+    transition: all .5s cubic-bezier(.7, 0, .3, 1);
+}
+
+.note-container{
+    width: 74vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 40px;
+}
+
+.department-container{
+    display: flex;
+}
+
+.class-list{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    border-radius: 4px;
+    padding: 40px 10px;
+}
+
+.textbook-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.textbook-container{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.department-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+    .department-container{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .textbook-container{
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .textbook-container img{
+        width: 72px;
+        margin-right: 25px;
+    }
+
+    .textbook-title{
+        font-weight: 400;
+    }
+
+    .note-container{
+        width: 80vw;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .class-list{
+        flex-direction: row;
+        overflow: auto;
+        width: 100%;
+        padding: 25px 0;
+        text-overflow: ellipsis;
+    }
+
+    .class-list::-webkit-scrollbar{
+        display: none;
+    }
+
+    .classlist-container{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .department-icon img{
+        width: 25px;
+    }
+
+    .department p{
+        width: max-content;
+        font-size: 14px;
+        opacity: .65;
+    }
+
+    .active-depart::after{
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: auto;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--Soft-red);
+        transition: all .5s cubic-bezier(.7, 0, .3, 1);
+    }
+}
